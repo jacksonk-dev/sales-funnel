@@ -5,9 +5,16 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="author" content="je-kaypro">
+        <meta name="description" content="Looking for apartments, full houses, villas and any other property in Bahrain? We got you">
+        <meta name="keywords" content="Real Estate, House, Villa, Apartment">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" type="text/css" href="assets/bootstrap-4.3.1/css/bootstrap.min.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya|Cormorant+Upright|EB+Garamond|Josefin+Slab|Marck+Script|Niconne|Nixie+One&display=swap" />
+        <link rel="shortcut icon" href="assets/images/design/logo.jpg">
+        <meta property="image" content="assets/images/design/logo.jpg">
+        <meta property="og:image" content="assets/images/design/logo.jpg">
+        <meta property="og:image:type" content="assets/images/design/logo.jpg">
         <title>House With Me</title>
         <style>             
             @font-face {
@@ -73,6 +80,13 @@
                 padding: 32px;
                 margin-top: 72px;
             }
+            .form-control, .input-group-text {
+                font-weight: bold;
+            }
+            .input-group-text {
+                background-color: #165658;
+                color: #fff;
+            }
             @media screen and (min-width: 760px) {
                 form {
                     margin-top: 0;
@@ -82,8 +96,8 @@
                 font-family: Brendan;
                 font-size: 3rem;
             }
-            form input{
-                width: 100%;
+            form input, select {
+                /* width: 100%; */
                 margin-bottom: 16px;
                 padding: 4px;
             }
@@ -169,14 +183,14 @@
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <p class="text-justify">
                                 We help you find the property of your dreams.
                                 Let us know what your preferences are, what your budget is
                                 and let us do what we do. Sit back and relax
                             </p>
                             <div>
-                                <video width="100%" height="240" controls>
+                                <video width="100%" height="300" controls>
                                     <source src="./assets/videos/add.mp4" type="video/mp4">
                                     <source src="./assets/videos/add2.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
@@ -186,7 +200,7 @@
                         <form 
                             method="POST" 
                             action="."
-                            class="col-11 col-md-5 text-center bg-green-transparent"
+                            class="col-11 col-md-4 text-center bg-green-transparent"
                         >
                             <a name="application-form"></a>
                             <h3>
@@ -215,6 +229,29 @@
                                 placeholder="Phone Number" 
                                 class="form-control"
                             />
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Property</span>
+                                </div>
+                                <select name="property" class="form-control">
+                                    <option>Select</option>
+                                    <option>Villa</option>
+                                    <option>Office</option>
+                                    <option>Apartment</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">BHD</span>
+                                </div>
+                                <input 
+                                    type="number" 
+                                    name="budget"
+                                    placeholder="Your Budget" 
+                                    class="form-control"
+                                />
+                            </div>
                             <button>
                                 Submit
                             </button>
@@ -231,7 +268,7 @@
                         foreach ($properties as $propNumber) {
                             $filePrefix = './assets/images/content/';
                             $file = '';
-                            foreach (['.jpg', '.gif', '.png'] as $ext) {
+                            foreach (['.jpg', '.jpeg', '.gif', '.png'] as $ext) {
                                 $testFile = $filePrefix.$propNumber.$ext;
                                 if(file_exists($testFile)){
                                     $file = $testFile;
