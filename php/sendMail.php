@@ -27,11 +27,13 @@
                     <p>Call him on <a href=\"tel:\/\/$phone\">$phone</a></p>
                     <p>Or mail him at $from</p>
                     <table style=\"width:100%\">
-                        <tr>
-                            <th>Property</th>
-                            <th>Budget</th> 
+                        <tr 
+                            style=\"text-align: left; border: 1px solid black; background-color: #000; color: #fff;\"
+                        >
+                            <th style=\"padding: 8px 2px\">Property</th>
+                            <th style=\"padding: 8px 2px\">Budget (BHD)</th> 
                         </tr>
-                        <tr>
+                        <tr style=\"border: 1px solid black;\">
                             <td>$property</td>
                             <td>$budget</td> 
                         </tr>
