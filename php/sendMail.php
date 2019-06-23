@@ -3,6 +3,14 @@
         $fullName = trim($_POST['fullName']);
         $email = trim($_POST['email']);
         $phone = trim($_POST['phone']);
+        $property = trim($_POST['property']);
+        $budget = trim($_POST['budget']);
+
+        if($property === "Select"){
+            $property = 'unknown';
+        } elseif ($property === "Other") {
+            $property = 'unclear';
+        }
 
         $to = 'kamyaj89@gmail.com';
         $from = $email;
@@ -18,9 +26,19 @@
                     <p>$fullName is looking for property.</p>
                     <p>Call him on <a href=\"tel:\/\/$phone\">$phone</a></p>
                     <p>Or mail him at $from</p>
+                    <table style=\"width:100%\">
+                        <tr>
+                            <th>Property</th>
+                            <th>Budget</th> 
+                        </tr>
+                        <tr>
+                            <td>$property</td>
+                            <td>$budget</td> 
+                        </tr>
+                    </table>
                 </body>
             </html>
-            ";
+        ";
 
         $headers = [
             'From' => 'https://housewithme.com',
