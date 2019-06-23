@@ -1,9 +1,13 @@
+<?php
+    include './php/sendMail.php'
+?>
 <!Doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" type="text/css" href="assets/bootstrap-4.3.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya|Cormorant+Upright|EB+Garamond|Josefin+Slab|Marck+Script|Niconne|Nixie+One&display=swap" />
         <title>House With Me</title>
         <style>             
             @font-face {
@@ -33,7 +37,10 @@
                 scroll-behavior: smooth;
             } 
             body {
-                font-family: 'Courier New', Courier, monospace;
+                font-size: 18px;
+                font-weight: 600;
+                /* font-family: 'Cormorant Upright', serif; */
+                font-family: 'Nixie One', cursive;
             }
             #header{
                 background-image: url("assets/images/design/header.bg.jpg");
@@ -176,7 +183,11 @@
                                 </video>
                             </div>
                         </div>
-                        <form class="col-11 col-md-5 text-center bg-green-transparent">
+                        <form 
+                            method="POST" 
+                            action="."
+                            class="col-11 col-md-5 text-center bg-green-transparent"
+                        >
                             <a name="application-form"></a>
                             <h3>
                                 Apply Right Now
@@ -186,16 +197,21 @@
                             </p>
                             <input 
                                 type="text" 
+                                name="fullName"
                                 placeholder="Full Name" 
                                 class="form-control"
+                                required
                             />
                             <input 
-                                type="email" 
+                                type="email"
+                                name="email"
                                 placeholder="Email" 
                                 class="form-control"
+                                required
                             />
                             <input 
                                 type="text" 
+                                name="phone"
                                 placeholder="Phone Number" 
                                 class="form-control"
                             />
