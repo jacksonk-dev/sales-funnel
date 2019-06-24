@@ -8,14 +8,11 @@
 
         if($property === "Select"){
             $property = 'unknown';
-        } elseif ($property === "Other") {
-            $property = 'unclear';
         }
 
-        $to = 'kamyaj89@gmail.com';
+        $to = 'ronaldchambadde@gmail.com';
         $from = $email;
         $subject = 'House With Me Client';
-        $message = "$fullName is looking for property. Call him on $phone";
         $message = "
             <html>
                 <head>
@@ -24,8 +21,8 @@
                 <body>
                     <h1 style=\"color: blue;\">You have a client</h1>
                     <p>$fullName is looking for property.</p>
-                    <p>Call him on <a href=\"tel:\/\/$phone\">$phone</a></p>
-                    <p>Or mail him at $from</p>
+                    <p>Call <a href=\"tel:\/\/$phone\">$phone</a></p>
+                    <p>Or mail at $from</p>
                     <table style=\"width:100%\">
                         <tr 
                             style=\"text-align: left; border: 1px solid black; background-color: #000; color: #fff;\"
@@ -48,7 +45,7 @@
             'X-Mailer' => 'PHP/' . phpversion(),
             'MIME-Version' => '1.0',
             'Content-type' => 'text/html; charset=iso-8859-1',
-            'Bcc' => 'jacksonk.dev@gmail.com'
+            'Bcc' => 'kamyaj89@gmail.com'
         ];
 
         mail($to, $subject, $message, $headers);
