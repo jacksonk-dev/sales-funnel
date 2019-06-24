@@ -134,7 +134,7 @@
             }
             #property-grid {
                 display: grid;
-                grid-gap: 8px;
+                grid-gap: 12px;
                 margin: 16px;
             }
             @media screen and (min-width: 760px) {
@@ -146,6 +146,12 @@
                 display: flex;
                 align-items: center;
                 background-color: #000;
+                box-shadow: 0px 0px 8px 1px #000;
+                border: 16px solid rgb(227, 230, 73);
+                transition: border .3s linear;
+            }
+            .img-container:hover {
+                border: 4px solid rgb(227, 230, 73);
             }
             img {
                 height: auto;
@@ -261,7 +267,7 @@
             </div>
         </div>
         <div class="container">
-            <div class="col-md-11 col-lg-11 mx-auto">
+            <div style="padding: 0" class="col-md-11 col-lg-11 mx-auto">
                 <div id="property-grid">
                     <?php
                         $properties = [1, 2, 3, 4, 5, 6, 7, 8];
