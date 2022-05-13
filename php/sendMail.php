@@ -10,7 +10,7 @@
             $property = 'unknown';
         }
 
-        $to = 'ronaldchambadde@gmail.com';
+        $to = 'someone@somewhere.com';
         $from = $email;
         $subject = 'House With Me Client';
         $message = "
@@ -45,7 +45,7 @@
             'X-Mailer' => 'PHP/' . phpversion(),
             'MIME-Version' => '1.0',
             'Content-type' => 'text/html; charset=iso-8859-1',
-            'Bcc' => 'kamyaj89@gmail.com'
+            'Bcc' => 'someone@somewhereelse.com'
         ];
 
         mail($to, $subject, $message, $headers);
